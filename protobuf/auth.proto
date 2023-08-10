@@ -1,0 +1,28 @@
+syntax = "proto3";
+package pb;
+option go_package = "protobuf/pb";
+
+
+service AuthService {
+    rpc Login (LoginRequest) returns (LoginResponse);
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+message LoginResponse {
+    string status = 1;
+    DataAuth data = 2;
+}
+
+message DataAuth {
+    DataUser user = 1;
+    string refreshToken = 2;
+    string accessToken = 3;
+}
+message DataUser {
+    string idUser = 1;
+    string fullname = 2;
+    string email = 3;
+}

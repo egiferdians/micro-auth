@@ -1,0 +1,7 @@
+type: google.api.Service
+config_version: 1
+http:
+  rules:
+    - selector: pb.AuthService.Login
+      post: /v1/auth/login
+      body: "*"
